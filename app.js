@@ -10,7 +10,7 @@
 
 */
 
-//Array
+//---------------------------------------------------------------------------------------------Array
 const daysOfWeek = ["mon", "tue", "wed", "thu", "fri", "sat"];
 console.log(daysOfWeek[4]);
 console.log(daysOfWeek);
@@ -19,7 +19,7 @@ daysOfWeek.push("sun");
 console.log(daysOfWeek);
 
 
-//Object 
+//-------------------------------------------------------------------------------------------Object 
 const player = {
 
     name : "seunghye",
@@ -38,4 +38,19 @@ console.log(player);
 //Object에 값을 추가할 때
 player.lastName = "potato";
 console.log(player);
+
+
+
+//------------------------------------------------------------------------------------------------------
+
+
+const age = 96;
+function calculateKrAge(ageOfForeigner){
+    return ageOfForeigner + 2;
+}
+
+const krAge = calculateKrAge(age);
+console.log(krAge);
+
+
 
