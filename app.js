@@ -1,3 +1,6 @@
+
+
+
 /*
     let / const
     const = constant 값이 절대 바뀌지 않음
@@ -8,7 +11,7 @@
     null = 값이 없음
 
 
-*/
+
 
 //---------------------------------------------------------------------------------------------Array
 const daysOfWeek = ["mon", "tue", "wed", "thu", "fri", "sat"];
@@ -65,7 +68,7 @@ console.log(typeof "15", typeof parseInt("15"));
 //prompt에 찍힌 값은 무조건 String -> number타입으로 사용하고 싶으면 형변환
 parseInt()는 숫자가 아닌 글자를 만나게 되면 그글자 이후를 무시해버리고 해당지점까지의 정수값을 리턴
 number()는 숫자가 아닌 값이 해당되어 있다면 무조건 NaN로 리턴
-*/
+
 
 
 const age2 = parseInt(prompt("how old are you?"));
@@ -89,3 +92,29 @@ if(isNaN(age2) || age2 < 0){
 
 
 
+*/
+
+
+document.title = "Momentum JS";
+const title = document.querySelector(".hello h1");
+console.log(title);
+
+//console.dir(title);
+//title.innerText="got u";
+
+/*document객체를 통해 요소를 가져오고 요소를 수정함!
+-> 자바스크립트파일과 html파일을 나눠 요소를 가져와 수정하는 이유는
+   추후에 편하고 빠르게 유지보수를 하기 위함도 있고, 
+   (분리되어 있으므로 빠르게 유지보수를 위한 코드르 찾는 것이 가능하며)
+   html은 정적 화면만을 위한 문서이기 때문에 분리를 하는 것이 좋다.
+*/
+
+
+
+
+/* querySelector 
+-> element를 CSS방식으로 검색할 수 있는 함수
+-> 후손선택자를 이용하여 요소 내부에 있는 다른요소를 가져올 수 있음
+-> 클래스name이 동일한 요소가 여러개 있어도 처음 존재하는 요소만 가져옴
+    전부 가져오고싶으면 querySelectorAll() 함수 사용
+*/
