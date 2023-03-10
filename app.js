@@ -90,11 +90,13 @@ if(isNaN(age2) || age2 < 0){
     console.log("u can do whatever u want")
 }
 
-
-
 */
 
 
+
+//-----------------------------------------------------------------------------------------document
+
+/*
 document.title = "Momentum JS";
 const title = document.querySelector(".hello h1");
 console.log(title);
@@ -107,9 +109,6 @@ console.log(title);
    추후에 편하고 빠르게 유지보수를 하기 위함도 있고, 
    (분리되어 있으므로 빠르게 유지보수를 위한 코드르 찾는 것이 가능하며)
    html은 정적 화면만을 위한 문서이기 때문에 분리를 하는 것이 좋다.
-*/
-
-
 
 
 /* querySelector 
@@ -118,3 +117,55 @@ console.log(title);
 -> 클래스name이 동일한 요소가 여러개 있어도 처음 존재하는 요소만 가져옴
     전부 가져오고싶으면 querySelectorAll() 함수 사용
 */
+
+
+
+
+
+
+//----------------------------------------------------------------------------------------------event
+
+const h1 = document.querySelector(".hello:first-child h1");
+
+function handleTitleClick(){
+    h1.style.color = "pink";   
+}
+
+function handleMouseEnter(){
+    h1.innerText = "mouse is here";
+}
+
+function handleMouseLeave(){
+    h1.innerText = "mouse is gone";
+}
+
+h1.addEventListener("click", handleTitleClick);
+h1.addEventListener("mouseenter", handleMouseEnter);
+h1.addEventListener("mouseleave", handleMouseLeave);
+
+
+
+//--------------------------------------------------------------------------------------------------window
+
+function handleWindowResize(){
+    document.body.style.backgroundColor = "tomato";
+}
+
+function handleWindowCopy(){
+    alert("copier");
+}
+
+function handleWindowOffline(){
+    alert("SOS no WIFI");
+}
+
+function handleWindowOnline(){
+    alert("WIFI is connected");
+}
+
+window.addEventListener("resize", handleWindowResize);
+window.addEventListener("copy", handleWindowCopy);
+window.addEventListener("offline", handleWindowOffline);
+window.addEventListener("online", handleWindowOnline);
+
+
