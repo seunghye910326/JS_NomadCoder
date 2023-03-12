@@ -13,7 +13,7 @@
 
 
 
-//---------------------------------------------------------------------------------------------Array
+//-------------------------------------------------------------------------------------------------Array
 const daysOfWeek = ["mon", "tue", "wed", "thu", "fri", "sat"];
 console.log(daysOfWeek[4]);
 console.log(daysOfWeek);
@@ -22,7 +22,7 @@ daysOfWeek.push("sun");
 console.log(daysOfWeek);
 
 
-//----------------------------------------------------------------------------------------------Object 
+//------------------------------------------------------------------------------------------------Object 
 const player = {
 
     name : "seunghye",
@@ -125,6 +125,8 @@ console.log(title);
 
 //----------------------------------------------------------------------------------------------event
 
+
+/*
 const h1 = document.querySelector(".hello:first-child h1");
 
 function handleTitleClick(){
@@ -142,12 +144,12 @@ function handleMouseLeave(){
 h1.addEventListener("click", handleTitleClick);
 h1.addEventListener("mouseenter", handleMouseEnter);
 h1.addEventListener("mouseleave", handleMouseLeave);
-
+*/
 
 
 //--------------------------------------------------------------------------------------------------window
 
-function handleWindowResize(){
+/*function handleWindowResize(){
     document.body.style.backgroundColor = "tomato";
 }
 
@@ -167,5 +169,73 @@ window.addEventListener("resize", handleWindowResize);
 window.addEventListener("copy", handleWindowCopy);
 window.addEventListener("offline", handleWindowOffline);
 window.addEventListener("online", handleWindowOnline);
+*/
+
+//--------------------------------------------------------------------------------------------------css
+
+/* css / html / js로 파일을 나눠서 코드를 진행하는 방법
+   변수명을 잘못 쓰는 실수를 방지하기 위해 변수를 새로 생성
+   클래스명을 작성한 뒤에 js나 css에 새롭게 클래스명을 바꾼다면 덮어써진다.
+   따라서 js에서는 클래스명을 바꾸지 말아야 한다.
+*/
+
+/*classList
+  classList는 기존에 html에서 작성한 클래스명은 그대로 두면서
+  새로운 클래스명을 같이 공존시키거나 클래스명을 없애는 작용을 한다.
+  여러개의 클래스명을 다양한 파일에서 생성하거나 지울 때 쓴다.
+*/
+
+/*toggle
+  토글은 h1의 classList에 clickedClass가 이미 있는지 확인해서 
+  만약 있다면 clicked를 제거, 없다면 clicked를 생성
+  if조건절까지 자동으로 확인해서 실행해준다.
+  = classList.remove, classList.add의 성격을 동시에 지님
+*/
+
+const h1 = document.querySelector("div.hello:first-child h1")
+
+function handleTitleClick(){
+
+    /*const currentColor = h1.style.color;
+    let newColor;
+
+    /*console.log(h1.style.color);
+    h1.style.color = "lightblue";
+    console.log(h1.style.color);
+
+    if(currentColor === "lightblue"){
+        newColor = "tomato";
+    } else{
+        newColor = "lightblue";
+    }
+
+    h1.style.color = newColor;
+    */
+
+    //h1.className = "active";
+    //css의 파일에서와 같이 생성
+
+    //const clickedClass = "clicked";
+
+    /*if(h1.className === clickedClass){
+        h1.className = "";
+    } else {
+        h1.className = clickedClass;
+    }
+    css에 작성한 .test css가 js에서 덮어써져서 작동을 안함!*/
+
+   /* if(h1.classList.contains(clickedClass)){
+        h1.classList.remove(clickedClass);
+    } else {
+        h1.classList.add(clickedClass);
+    }
+    */
+
+    h1.classList.toggle("clicked");
+
+
+}
+
+h1.addEventListener("click", handleTitleClick);
 
 
