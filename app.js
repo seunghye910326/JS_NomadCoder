@@ -192,7 +192,7 @@ window.addEventListener("online", handleWindowOnline);
   = classList.remove, classList.add의 성격을 동시에 지님
 */
 
-const h1 = document.querySelector("div.hello:first-child h1")
+/*const h1 = document.querySelector("div.hello:first-child h1")
 
 function handleTitleClick(){
 
@@ -210,7 +210,7 @@ function handleTitleClick(){
     }
 
     h1.style.color = newColor;
-    */
+    
 
     //h1.className = "active";
     //css의 파일에서와 같이 생성
@@ -222,14 +222,14 @@ function handleTitleClick(){
     } else {
         h1.className = clickedClass;
     }
-    css에 작성한 .test css가 js에서 덮어써져서 작동을 안함!*/
+    css에 작성한 .test css가 js에서 덮어써져서 작동을 안함!
 
    /* if(h1.classList.contains(clickedClass)){
         h1.classList.remove(clickedClass);
     } else {
         h1.classList.add(clickedClass);
     }
-    */
+    
 
     h1.classList.toggle("clicked");
 
@@ -237,5 +237,93 @@ function handleTitleClick(){
 }
 
 h1.addEventListener("click", handleTitleClick);
+*/
+
+const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-form input");
+//const loginButton = loginForm.querySelector("button");
+const link = document.querySelector("a");
+const greeting = document.querySelector("#greeting");
+const HIDDEN_CLASSNAME = "hidden";
+const USERNAME_KEY = "username";
+
+function onLoginSubmit(event){
+
+    event.preventDefault();
+    
+    /*if(username === ""){
+        alert("plz write ur name");
+    } else if(username.length > 15){
+        alert("ur name is too long");
+    }*/
+    
+    loginForm.classList.add(HIDDEN_CLASSNAME);
+    const username = loginInput.value;
+    localStorage.setItem(USERNAME_KEY, username);
+    //greeting.innerText = "Hello " + username;
+    paintGreetings(savedUsername);
 
 
+}
+
+function paintGreetings(username){
+
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+    greeting.innerText = `Hello ${username}`;
+
+}
+
+/*function handleLinkClick(event){
+
+    event.preventDefault();
+    console.dir(event);
+
+}*/
+
+//loginButton.addEventListener("click", onLoginBtnClick);
+
+// 항상 user가 입력하는 값의 유효성을 확인할 것!!!!!!! 
+
+
+//loginForm.addEventListener("submit", onLoginSubmit);
+//link.addEventListener("click", handleLinkClick);
+
+const savedUsername = localStorage.getItem(USERNAME_KEY);
+
+if(savedUsername === null){
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
+    //username이 저장되어 있지 않다면 form태그를 보여주고
+    loginForm.addEventListener("submit", onLoginSubmit);
+    //submit버튼을 누르면 이벤트를 작동시킨다.
+}else {
+    paintGreetings(savedUsername);
+}
+
+/* preventDefault = stopPropagation 
+기본적으로 submit을 하면 브라우저가 새로고침된다. = browserDefault
+이를 막기 위해서 preventDefault라는 함수를 사용하면 새로고침(기본동작)을 막을 수 있다.
+preventDefault는 event의 기본동작을 막는다.
+기본동작1 : a태그에서 href속성을 넣어서 이동하는 경우 
+기본동작2 : form태그안에 submit 버튼을 눌러 새로고침 되는 것
+*/
+
+
+/* visibility:hidden vs display:none
+visibility는 요소의 공간은 그대로 두고 모양은 사라짐
+display는 요소의 공간까지 사라짐
+*/
+
+/* `Hello ${username}` 백틱 = ``
+*/
+
+
+
+//----------------------------------------------------------------------------------------------save username
+
+/* localStorage
+브라우저에서 제공하는 값을 저장하여 기억해주는 API = localStorage
+1. localStorage.setItem("key", "value"); key=value형식으로 저장됨
+Application -> localStorage에서 확인할 수 있음
+2. localStorage.getItem("key") 값 가져오기
+3. localStorage.removeItem("key") 값 지우기
+*/
