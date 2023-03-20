@@ -327,3 +327,7 @@ Application -> localStorage에서 확인할 수 있음
 2. localStorage.getItem("key") 값 가져오기
 3. localStorage.removeItem("key") 값 지우기
 */
+
+
+
+
