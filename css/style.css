@@ -40,3 +40,9 @@ img {
     z-index: -1;
     opacity:65%;
     }
+
+    
+button {
+    border: none;
+    background-color:transparent;
+}
