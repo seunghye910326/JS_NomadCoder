@@ -62,5 +62,5 @@ floor - 내림
 
 const todayQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
-quote.innerText = todayQuote.quote;
+quote.innerHTML = todayQuote.quote + "<br>";
 author.innerText = todayQuote.author;

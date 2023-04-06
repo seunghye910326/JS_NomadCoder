@@ -1,24 +1,69 @@
 body{
 
     background-color: beige;
+    font-family: 'Noto Sans KR', sans-serif;
 
 }
 
-h1 {
+#weather {
+    text-align: right;
+    margin-right: 20px;
+    font-weight: 300;
+    font-size: 20px;
+}
 
-    color : cornflowerblue;
+#weather span:last-child{
+    
+    margin-left: 10px;
+    
+
+}
+
+#clock {
+    
+    margin-top: 150px;
+    text-align: center;
+    font-size: 100px;
+    opacity: 60%;
+    
+    
+}
+
+#greeting {
+
+    color : black;
     transition: color .5s ease-in-out;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 900;
+    opacity: 70%;
+
+}
+
+form {
+
+    text-align: center;
+    
+}
+
+form input{
+
+    height: 35px;
+    width: 300px;
+
+}
+
+input[type=submit]{
+    
+    border: none;
+    opacity: 60%;
+    width: 100px;
+
 }
 
 .clicked {
 
     color : tomato;
-
-}
-
-.test{
-    
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 }
 
@@ -28,6 +73,22 @@ h1 {
     
 }
 
+
+#quote {
+
+    text-align: center;
+    margin-top: 200px;
+
+}
+
+#quote span{
+    
+    font-size: 12px;
+    font-weight: 500;
+    color:black;
+    opacity: 70%;
+
+}
 
 img {
     position:absolute;
@@ -41,8 +102,34 @@ img {
     opacity:65%;
     }
 
-    
-button {
+ul {
+
+    text-align: center;
+    height: 75px;
+
+}
+
+
+ul>li {
+
+    list-style-type: none;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+ul>li>button {
+
     border: none;
     background-color:transparent;
+    opacity: 70%;
+
 }
+
+
+#login-form>input{
+
+    border: none;
+    background-color:transparent;
+
+}
+
